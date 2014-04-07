@@ -16,10 +16,10 @@ public class Bird extends GameObject {
     Vector2 acceleration;
     public Bird()
     {
-        texture = new Texture("square.png");
-        position = new Vector2(10,80);
+        texture = ContentManager.GetTexture("square.png");
+        position = new Vector2(10,90);
         velocity =  new Vector2();
-        acceleration = new Vector2(0, -0.3f);
+        acceleration = new Vector2(0, -24f);
     }
     @Override
     public void Update(float time)
@@ -31,10 +31,14 @@ public class Bird extends GameObject {
 
 
         if(Gdx.input.justTouched() || Gdx.input.isKeyPressed(Input.Keys.SPACE))
-            velocity.y = 7;
+            velocity.y = 500;
 
-        velocity.add(acceleration);
-        position.add(velocity);
+        //velocity.add(acceleration.scl(time));
+        //velocity.y += acceleration.y * time;
+        //position.add(velocity.scl(time));
+        velocity.add(acceleration).cpy().scl(time);
+        position.add(velocity.cpy().scl(time));
+        super.Update(time);
     }
 
 

@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class PipeGenerator {
 
-    public final static int VERTICAL_PIPE_GAP = 40;
+    public final static int VERTICAL_PIPE_GAP = 140;
     public final static int HORIZONTAL_PIPE_GAP = 60;
     public final static int MAX_PIPE_LENGTH = 80;
     public final static int MIN_PIPE_LENGTH = 10;

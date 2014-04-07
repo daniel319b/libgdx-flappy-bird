@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,7 +14,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class BaseGame extends ApplicationAdapter {
 
     protected SpriteBatch spriteBatch;
-    protected Color clearColor = Color.BLUE;
 
     @Override
     public void create ()
@@ -25,7 +25,8 @@ public class BaseGame extends ApplicationAdapter {
     @Override
     public void render()
     {
-        Gdx.gl.glClearColor(clearColor.r, clearColor.g, clearColor.b, clearColor.a);
+        //cornflower blue.
+        Gdx.gl.glClearColor(100 / 255.0f,149 / 255.0f , 237/255.0f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         Update();
         Draw();
